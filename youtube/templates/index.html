@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>YouTube 下載器</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #ff4e50, #1a2a6c);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .card {
+        background: rgba(0,0,0,0.75);
+        padding: 40px;
+        border-radius: 15px;
+        width: 420px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .radio-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        margin: 0 10px;
+        cursor: pointer;
+    }
+
+    button {
+        background: #ff4e50;
+        border: none;
+        padding: 12px 30px;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: #ff2e30;
+    }
+
+    footer {
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 0.7;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🎬 YouTube 下載器</h2>
+
+    <form action="/download" method="post">
+        <input type="text" name="url" placeholder="貼上 YouTube 影片網址" required>
+
+        <div class="radio-group">
+            <label><input type="radio" name="format" value="mp4" checked> MP4 影片</label>
+            <label><input type="radio" name="format" value="mp3"> MP3 音樂</label>
+        </div>
+
+        <button type="submit">開始下載</button>
+    </form>
+
+    <footer>Powered by yt-dlp + Flask</footer>
+</div>
+
+</body>
+</html>
